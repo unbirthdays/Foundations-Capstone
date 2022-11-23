@@ -1,0 +1,181 @@
+body {
+    background: #faf6e7;
+    margin: 0rem auto;
+    font-family: "Poppins", sans-serif;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 5px solid #FFFFFF;
+    border-top: 5px solid #FFFFFF;
+    background: #AFE4F4;
+    border-radius: 15pt;
+    max-height: 100px;
+  }
+  
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 105px;
+    background: #AFE4F4;
+      border-bottom: 5px solid #FFFFFF;
+      border-top: 5px solid #FFFFFF;
+      font-family: Kosugi;
+      max-height: 50px;
+      border-radius: 15px;
+      font-size: 25px;
+  }
+
+  nav > ol {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  .nav-btn {
+    list-style: none;
+    margin: 0 1em;
+	display: inline-flex;
+	justify-content: space-around;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  a:link {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #A8DEB1;
+    font-weight: 600;
+  }
+
+  #nomorenahs {
+    max-height: 100px;
+  }
+
+  #logo {
+    max-height: 100px;
+  }
+
+  #slogan {
+    font-family: Poppins;
+    color: white;
+    font-weight: 200;
+    font-style: italic;
+    display: block;
+    float: right;
+    padding: 5px;
+  }
+
+  #kawaii {
+    text-align: center;
+  }
+
+  .lunch {
+    max-height: 65px;
+  }
+
+  .tool {
+    height: 45px;
+  }
+
+  .main {
+    margin-top: 10%;
+    padding: 10px;
+    max-height: 350px;
+    margin-right: 25px;
+  }
+
+  .results {
+    bottom: 20px;
+    justify-content: bottom;
+  }
+
+  #beginning {
+    border-radius: 15px;
+    width: 40%;
+    margin: 20px;
+    padding: 20px;
+    float: left;
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #end {
+    background-color: white;
+    border-radius: 15px;
+    width: 40%;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    float: right;
+    display: block;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: Poppins;
+  }
+  
+  h2 {
+    font-family: Kosugi;
+  }
+
+  #bear {
+    max-height: 50px;
+  }
+
+  #about-me {
+    margin-top: 12%;
+    background-color: white;
+    border-radius: 15pt;
+    padding: 15px;
+    max-width: 50%;
+    display: inline-block;
+    justify-content: center;
+    text-align: left;
+    vertical-align:top;
+  }
+
+  #about-me > a:link {
+    text-decoration: none;
+    color: #AFE4F4;
+    font-weight: 600;
+  }
+
+  #about-me > a:visited {
+    text-decoration: none;
+    color: #AFE4F4;
+    font-weight: 600;
+  }
+
+  #about-me > a:hover {
+    text-decoration: none;
+    color: #A8DEB1;
+    font-weight: 600;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    font-size: 6px;
+    display: flex;
+    justify-content: right;
+  }

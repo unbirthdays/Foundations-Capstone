@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>No More Nahs!</title>
+    <link rel="icon" href="./images/icons8-eights-64.png" type="image/icon type">
+	<link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="./images/lognobg.png" id="logo">
+        <img src="./images/nomorenahs-removebg-preview.png" id="nomorenahs"></a>
+        <div id="slogan">
+            <div id="kawaii">
+                <img class="lunch" src="./images/lunch.png">
+                <img class="lunch" src="./images/pancakes.gif">
+                <img class="lunch" src="./images/momo.png">
+            </div>
+            <div>
+                <span>where "I don't know" doesn't cut it anymore</span>
+            </div>
+        </div>
+    </header>
+	<nav>
+		<ol>
+	        <li class="nav-btn"><a href="./about.html">about</a></li>
+            <li class="nav-btn"><img class="tool" src="./images/toolfork-removebg-preview.png"></li>
+            <li class="nav-btn"><a href="./options.html">all options</a></li>
+            <li class="nav-btn"><img class="tool" src="./images/toolspoon-removebg-preview.png"></li>
+	        <li class="nav-btn"><a href="./editing.html">add to choices</a></li>
+            <li class="nav-btn"><img class="tool" src="./images/toolknife-removebg-preview.png"></li>
+	        <li class="nav-btn"><a href="/">generic result</a></li>
+	    </ol>
+	</nav> <br>
+    <div class="main">
+        <div id="beginning">
+            <h1>what do you want to eat?</h1>
+            <h4>maybe something...</h4>
+            <br>
+            <select name="filters" id="filters">
+                <option value="">-Choose a filter-</option>
+            </select>
+            
+            <button>Add filter</button>
+        </div>
+        <div id="end">
+            <ul>
+                <li>hi</li>
+            </ul>
+        </div>
+    </div><br>
+    <div class="results">
+        <button>Show me my results!</button>
+        <button>Delete all filters</button>
+    </div>
+
+    <br>
+<footer>Made by Sabrina Baccam</footer>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
