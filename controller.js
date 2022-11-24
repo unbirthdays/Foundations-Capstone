@@ -183,7 +183,7 @@ module.exports = {
     },
 
     getRandomRestaurant: (req, res) => {
-        query = "SELECT name, tags FROM restaurants"
+        query = "SELECT name FROM restaurants"
         if(req.query.filters != undefined) {
             filters = req.query.filters.split(",");
             for(let i = 0; i < filters.length; i++) {
@@ -198,12 +198,7 @@ module.exports = {
         console.log(query)
         sequelize.query(query)
         .then((dbRes) => {
-            data = {
-                "name": dbRes[0][0]["name"],
-                "tags": convertTagsToList(dbRes[0][0]["tags"])
-            }
-
-            res.status(200).send(data)
+            res.status(200).send(dbRes[0])
         }).catch(err => console.log('error getting random restaurant', err))
     },
 

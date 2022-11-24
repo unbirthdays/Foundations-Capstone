@@ -33,30 +33,40 @@
 	        <li class="nav-btn"><a href="/">generic result</a></li>
 	    </ol>
 	</nav> <br>
-    <div class="main">
-        <div id="beginning">
-            <h1>what do you want to eat?</h1>
-            <h4>maybe something...</h4>
-            <br>
-            <select name="filters" id="filters">
-                <option value="" disabled selected>-Choose a filter-</option>
-            </select>
-            
-            <button>Add filter</button>
+    <div id="bulk">
+        <div class="main">
+            <div id="beginning">
+                <h1>what do you want to eat?</h1>
+                <h4>maybe something...</h4>
+
+                <br>
+                <select name="filters" id="filters">
+                    <option value="" disabled selected>-Choose a filter-</option>
+                </select>
+                
+                <button id="addFilter">Add filter</button>
+            </div>
+            <div id="end">
+                <ul>
+                    <li>hi</li>
+                </ul>
+            </div>
+        </div><br>
+        <div class="results">
+        <button id="myBtn">Show me my results!</button>
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p><div class="loader"></div></p>
+            </div>
         </div>
-        <div id="end">
-            <ul>
-                <li>hi</li>
-            </ul>
+            <button id="delete">Remove all filters</button>
         </div>
-    </div><br>
-    <div class="results">
-        <button>Show me my results!</button>
-        <button>Delete all filters</button>
     </div>
 
     <br>
 <footer>Made by Sabrina Baccam</footer>
+
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="index.js"></script>
 </body>

@@ -8,7 +8,6 @@ body {
   select {
     appearance: none;
     max-width: 40%;
-    max-height: 20%;
     color: cornflowerblue;
     border: 1px solid black;
     border-radius: 5px;
@@ -47,8 +46,8 @@ body {
   .nav-btn {
     list-style: none;
     margin: 0 1em;
-	display: inline-flex;
-	justify-content: space-around;
+    display: inline-flex;
+    justify-content: space-around;
     vertical-align: middle;
     align-items: center;
   }
@@ -79,6 +78,10 @@ body {
     max-height: 100px;
   }
 
+  #logo:hover {
+    animation: spin 3s linear infinite;
+  }
+
   #slogan {
     font-family: Poppins;
     color: white;
@@ -106,6 +109,7 @@ body {
     padding: 10px;
     max-height: 350px;
     margin-right: 25px;
+    display: block;
   }
 
   .results {
@@ -133,6 +137,23 @@ body {
     padding: 20px;
     float: right;
     display: block;
+  }
+
+  button {
+    background-color: #AFE4F4;
+    color: white;
+    border: 1px solid #FFFFFF;
+    padding: 7px;
+    margin: 2px;
+    border-radius: 5pt;
+  }
+
+  #delete {
+    background-color: #ff5860;
+  }
+
+  #filters {
+    height: 20pt;
   }
 
   .content {
@@ -210,3 +231,79 @@ body {
     justify-content: right;
   }
 
+
+/* ALL BELOW IS TO STYLE THE MODAL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! edited from w3 */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  border-radius: 15pt;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 45%; 
+}
+
+/* The Close Button */
+.close {
+  color: #A8DEB1;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* loader */
+.loader {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 3s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border-top: 16px solid #AFE4F4;
+  border-right: 16px solid #A8DEB1;
+  border-bottom: 16px solid #faf6e7;
+  border-left: 16px solid pink;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+@keyframes spin {
+  0% {
+    display: block;
+    opacity: 100;
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  99% {
+    opacity: 100;
+    transform: rotate(360deg);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/* end of modal styling */

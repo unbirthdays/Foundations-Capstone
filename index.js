@@ -12,12 +12,12 @@ app.use(cors())
 app.post("/seed", seed);
 
 // Restaurant API calls
-app.get("/api/getAllRestaurants", getAllRestaurants);
-app.get("/api/getRestaurants", getRestaurants);
-app.get("/api/getRestaurant", getRestaurant);
-app.get("/api/getRandomRestaurant", getRandomRestaurant);
-app.post("/api/addRestaurant", addRestaurant);
-app.delete("/api/deleteRestaurant", deleteRestaurant);
+app.get("/api/getAllRestaurants", getAllRestaurants); // Gets every single restaurant, no filters
+app.get("/api/getRestaurants", getRestaurants); // Returns all restaurants that match the filters
+app.get("/api/getRestaurant", getRestaurant); // Getting ONE specific restaurant with tags given a name, implement in future?
+app.get("/api/getRandomRestaurant", getRandomRestaurant); // Returns a random restaurant with name and tags
+app.post("/api/addRestaurant", addRestaurant); // Adds a restaurant to the db with tags
+app.delete("/api/deleteRestaurant", deleteRestaurant); // Deletes a restaurant from the db
 
 // Tags API calls
 app.get("/api/getAllTags", getAllTags);
