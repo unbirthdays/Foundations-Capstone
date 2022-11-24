@@ -13,6 +13,10 @@ const sequelize = new Sequelize(DATABASE_URL, {
     }
 });
 
+function convertTagsToList(tags) {
+    return tags.split(",");
+}
+
 
 module.exports = {
 
@@ -123,14 +127,23 @@ module.exports = {
     },
 
     getAllRestaurants: (req, res) => {
-        sequelize.query(`SELECT name, tags FROM restaurants;`)
+        sequelize.query(`SELECT name, tags FROM restaurants ORDER BY name ASC;`)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0])
+            data = []
+            for(let i = 0; i < dbRes[0].length; i++) {
+                tags = convertTagsToList(dbRes[0][i]["tags"])
+                data.push({
+                    "name": dbRes[0][i]["name"],
+                    "tags": tags
+                })
+            }
+
+            res.status(200).send(data)
         }).catch(err => console.log('error getting all restaurants', err))
     },
 
     getRestaurants: (req, res) => {
-        query = "SELECT name, tags FROM restaurants"
+        query = "SELECT name, tags FROM restaurants ORDER BY name ASC"
         if(req.query.filters != undefined) {
             filters = req.query.filters.split(",");
             for(let i = 0; i < filters.length; i++) {
@@ -144,14 +157,28 @@ module.exports = {
         query += ";"
         sequelize.query(query)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0])
+            data = []
+            for(let i = 0; i < dbRes[0].length; i++) {
+                tags = convertTagsToList(dbRes[0][i]["tags"])
+                data.push({
+                    "name": dbRes[0][i]["name"],
+                    "tags": tags
+                })
+            }
+
+            res.status(200).send(data)
         }).catch(err => console.log('error getting restaurants', err))
     },
 
     getRestaurant: (req, res) => {
         sequelize.query(`SELECT name, tags FROM restaurants WHERE name='${req.query.name}';`)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0][0])
+            data = {
+                "name": dbRes[0][0]["name"],
+                "tags": convertTagsToList(dbRes[0][0]["tags"])
+            }
+
+            res.status(200).send(data)
         }).catch(err => console.log('error getting restaurant', err))
     },
 
@@ -171,7 +198,12 @@ module.exports = {
         console.log(query)
         sequelize.query(query)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0][0])
+            data = {
+                "name": dbRes[0][0]["name"],
+                "tags": convertTagsToList(dbRes[0][0]["tags"])
+            }
+
+            res.status(200).send(data)
         }).catch(err => console.log('error getting random restaurant', err))
     },
 
@@ -190,7 +222,7 @@ module.exports = {
     },
 
     getAllTags: (req, res) => {
-        sequelize.query(`SELECT * FROM tags;`).then((dbRes) => {
+        sequelize.query(`SELECT * FROM tags ORDER BY name ASC;`).then((dbRes) => {
             res.status(200).send(dbRes[0])
         }).catch(err => console.log('error getting all tags', err))
     },
