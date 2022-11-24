@@ -112,14 +112,22 @@ body {
     display: block;
   }
 
+  #bulk {
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+
   .results {
-    bottom: 20px;
+    display: block;
     justify-content: bottom;
+    text-align: center;
   }
 
   #beginning {
     border-radius: 15px;
     width: 40%;
+    height: 350px;
     margin: 20px;
     padding: 20px;
     float: left;
@@ -132,11 +140,12 @@ body {
     background-color: white;
     border-radius: 15px;
     width: 40%;
-    height: 300px;
+    height: 350px;
     margin: 20px;
     padding: 20px;
     float: right;
     display: block;
+    flex-wrap: wrap;
   }
 
   button {
@@ -162,6 +171,8 @@ body {
 
   h1 {
     font-family: Poppins;
+    font-weight: lighter;
+    color: #A8DEB1;
   }
   
   h2 {
