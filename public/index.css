@@ -179,8 +179,12 @@ body {
     font-family: Kosugi;
   }
 
-  #bear {
+  .bear {
     max-height: 50px;
+  }
+
+  #dizzy {
+    padding-top: 32px;
   }
 
   #about-me {

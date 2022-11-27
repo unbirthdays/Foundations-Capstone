@@ -1,5 +1,6 @@
-const filters = document.querySelector('#filters');
 const addFilter = document.querySelector('#addFilter');
+const showMe = document.querySelector('#myBtn');
+const result = document.querySelector('#restaurant-result');
 
 function getAllTags() {
     axios.get('/api/getAllTags')
@@ -13,27 +14,32 @@ function getAllTags() {
         })
 }
 
+
 function addsFilter(e) {
-    e.preventDefault();
+  e.preventDefault();
+}
 
-    let userRating = document.querySelector('input[name="rating"]:checked').value
-    let body = {
-        name: nameInput.value, 
-        rating: +userRating, 
-        countryId: +countrySelect.value
-    }
+function showMyResults(e) {
+  e.preventDefault();
+  axios.get('/api/getRandomRestaurant')
+    .then(res => {
+      res.data.forEach(restaurant => {
+        const randomRest = document.createElement('p');
+        randomRest.innerText = restaurant.name;
+        result.append(randomRest);
+      })
+  })
+}
 
-    axios.post('http://localhost:8080/cities', body)
-        .then(() => {
-            countrySelect.value = 1
-            nameInput.value = ''
-            document.querySelector('#rating-one').checked = true
-            getCities()
-        })
+function delay() {
+  setTimeout(() => {
+    showMyResults();
+  }, 2000);
 }
 
 getAllTags()
 addFilter.addEventListener('submit', addsFilter)
+showMe.addEventListener('click', showMyResults)
 
 // NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Below is all stuff for the modal

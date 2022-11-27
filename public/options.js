@@ -1,6 +1,6 @@
 const restaurants = document.querySelector('#restaurants')
 
-function getAllRestaurants() {
+function getAllRestaurants() { // reference lab with character
     axios.get('/api/getAllRestaurants')
         .then(res => {
             res.data.forEach(restaurant => {
