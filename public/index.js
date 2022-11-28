@@ -4,6 +4,7 @@ const result = document.querySelector('#restaurant-result');
 const endDiv = document.querySelector('#end');
 const loader = document.querySelector('#loader');
 const redo = document.querySelector('#redo');
+const generic = document.querySelector('#generic');
 
 function getAllTags() {
     axios.get('/api/getAllTags')
@@ -53,10 +54,33 @@ function showMyResults(e) {
   })
 }
 
+function getGenericResult(e) {
+  modal.style.display = "block"; 
+  loader.style.display = "inline-block";
+  e.preventDefault();
+  clearResults();
+  axios.get('/api/getRandomGenericTag')
+    .then(res => {
+        const randomCuisine = document.createElement('p');
+        randomCuisine.innerHTML = `${res.data.name} cuisine sounds good!<br><br>
+        <button id="redo">Retry</button>`;
+        console.log(res.data);
+        
+        setTimeout(() => {
+          result.append(randomCuisine);
+        }, 3000);
+
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 3000)
+    })
+  }
+
 
 getAllTags()
 addFilter.addEventListener('submit', addsFilter)
 showMe.addEventListener('click', showMyResults)
+generic.addEventListener('click', getGenericResult)
 
 // NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Below is all stuff for the modal

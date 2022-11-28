@@ -218,7 +218,7 @@ module.exports = {
 
     getAllTags: (req, res) => {
         sequelize.query(`SELECT * FROM tags ORDER BY name ASC;`).then((dbRes) => {
-            res.status(200).send(dbRes[0])
+            res.status(200).send(dbRes[0][0])
         }).catch(err => console.log('error getting all tags', err))
     },
 
