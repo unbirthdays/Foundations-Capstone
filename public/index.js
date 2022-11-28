@@ -39,9 +39,9 @@ function showMyResults(e) {
   axios.get('/api/getRandomRestaurant')
     .then(res => {
       res.data.forEach(restaurant => {
-        const randomRest = document.createElement('p');
-        randomRest.innerHTML = `Eat at ${restaurant.name} today!<br><br>
-        <button id="redo">Retry</button>`;
+        const randomRest = document.createElement('div');
+        randomRest.innerHTML = `<span style="font-size:24px">Eat at <span style="color:#AFE4F4"><b>${restaurant.name}</b></span> today!</span><br><br>
+        <img height="200px" src="./images/bear-eating.gif"/>`;
         
         setTimeout(() => {
           result.append(randomRest);
@@ -62,8 +62,8 @@ function getGenericResult(e) {
   axios.get('/api/getRandomGenericTag')
     .then(res => {
         const randomCuisine = document.createElement('p');
-        randomCuisine.innerHTML = `${res.data.name} cuisine sounds good!<br><br>
-        <button id="redo">Retry</button>`;
+        randomCuisine.innerHTML = `<span style="font-size:24px"><span style="color:#AFE4F4"><b><b>${res.data.name}</b></span> cuisine sounds good!</span>
+        <br><br><img height="200px" src="./images/bear-eating.gif"/>`;
         console.log(res.data);
         
         setTimeout(() => {

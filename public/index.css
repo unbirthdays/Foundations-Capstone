@@ -187,6 +187,10 @@ body {
     padding-top: 32px;
   }
 
+  #myBtn {
+    background-color: #A8DEB1;
+  }
+
   #about-me {
     margin-top: 12%;
     background-color: white;

@@ -24,13 +24,13 @@
     </header>
 	<nav>
 		<ol>
-	        <li class="nav-btn"><a href="./about.html">about</a></li>
+	        <li class="nav-btn"><a href="/">home</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolfork-removebg-preview.png"></li>
             <li class="nav-btn"><a href="./options.html">all options</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolspoon-removebg-preview.png"></li>
 	        <li class="nav-btn"><a href="./editing.html">add to choices</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolknife-removebg-preview.png"></li>
-	        <li class="nav-btn"><a id="generic" href="/">generic result</a></li>
+	        <li class="nav-btn"><a href="./about.html">about</a></li>
 	    </ol>
 	</nav> <br>
 
@@ -44,7 +44,8 @@
                     <option value="" disabled selected>-Choose a filter-</option>
                 </select>
                 
-                <button id="addFilter">Add filter</button>
+                <button id="addFilter">Add filter</button><br>
+                <button id="delete">Remove all filters</button>
             </div>
             <div id="end">
                 <ul>
@@ -54,7 +55,7 @@
         </div><br>
 
         <div class="results">
-        <button id="myBtn">Show me my results!</button>
+        <button id="myBtn">Show me my result!</button>
             <div id="myModal" class="modal">
               <div class="modal-content">
                 <span class="close">&times;</span>
@@ -63,7 +64,7 @@
                 <div id="restaurant-result"></div>
             </div>
         </div>
-            <button id="delete">Remove all filters</button>
+            OR <button id="generic">Pick me a cuisine!</button>
         </div>
 
     <br>
