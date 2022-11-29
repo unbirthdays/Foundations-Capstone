@@ -28,15 +28,44 @@
             <li class="nav-btn"><img class="tool" src="./images/toolfork-removebg-preview.png"></li>
             <li class="nav-btn"><a href="./options.html">all options</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolspoon-removebg-preview.png"></li>
-	        <li class="nav-btn"><a href="./editing.html">add to choices</a></li>
+	        <li class="nav-btn"><a href="./editing.html">add restaurant</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolknife-removebg-preview.png"></li>
 	        <li class="nav-btn"><a href="./about.html">about</a></li>
 	    </ol>
 	</nav> <br>
 
+    <div class="main">
+        <div id="beginning">
+            <h1>add a restaurant to the database</h1>
+            <h4>include filters!</h4>
+
+            <br>
+            <form>
+                <label for="restaurant-name">Restaurant name:</label><br>
+                <input type="text" id="restaurant-name" name="restaurant-name"><br>
+            </form>
+            <select name="filters" id="filters">
+                <option value="" disabled selected>-Choose a filter-</option>
+            </select>
+            
+            <button id="addFilter">Add filter</button><br>
+            <button id="delete">Remove all filters</button>
+        </div>
+        <div id="end">
+            <ul>
+                <li>hi</li>
+            </ul>
+        </div>
+    </div><br>
+
+    <div class="option">
+        <button id="add-option">Add option</button>
+    </div>
+
+
     <br>
 <footer>Made by Sabrina Baccam</footer>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="index.js"></script>
+<script src="editing.js"></script>
 </body>
 </html>

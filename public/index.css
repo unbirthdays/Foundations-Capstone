@@ -118,12 +118,6 @@ body {
     text-align: center;
   }
 
-  .results {
-    display: block;
-    justify-content: bottom;
-    text-align: center;
-  }
-
   #beginning {
     border-radius: 15px;
     width: 40%;
@@ -144,8 +138,39 @@ body {
     margin: 20px;
     padding: 20px;
     float: right;
+    /* display: block;
+    flex-wrap: wrap; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+  }
+
+  .remove-selected-filter {
+    background-color: #ff5860;
+    /* background-image: url("./images/trash-can-white.png"); */
+    padding: 4px;
+    margin: 0;
+  }
+
+  .selected-filters-note {
+    font-style: italic;
+    font-size: 10px;
+    color:#888;
+  }
+
+  .results {
     display: block;
-    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .option {
+    display: block;
+    text-align: center;
+  }
+
+  #add-option {
+    background-color: #A8DEB1;
   }
 
   button {
@@ -157,7 +182,7 @@ body {
     border-radius: 5pt;
   }
 
-  #delete {
+  #deleter {
     background-color: #ff5860;
   }
 
@@ -243,6 +268,7 @@ body {
   footer {
     position: fixed;
     bottom: 0;
+    right:15px;
     width: 100%;
     height: 15px;
     font-size: 6px;

@@ -28,7 +28,7 @@
             <li class="nav-btn"><img class="tool" src="./images/toolfork-removebg-preview.png"></li>
             <li class="nav-btn"><a href="./options.html">all options</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolspoon-removebg-preview.png"></li>
-	        <li class="nav-btn"><a href="./editing.html">add to choices</a></li>
+	        <li class="nav-btn"><a href="./editing.html">add restaurant</a></li>
             <li class="nav-btn"><img class="tool" src="./images/toolknife-removebg-preview.png"></li>
 	        <li class="nav-btn"><a href="./about.html">about</a></li>
 	    </ol>
@@ -45,26 +45,30 @@
                 </select>
                 
                 <button id="addFilter">Add filter</button><br>
-                <button id="delete">Remove all filters</button>
+                <button id="deleter">Remove all filters</button>
             </div>
             <div id="end">
-                <ul>
-                    <li>hi</li>
-                </ul>
+                <div>
+                    Current Filters:
+                    <ul id="selected-filters">
+                    </ul>
+                </div>
+                <p class="selected-filters-note">note: having no filters will return a random option from all restaurants.</p>
             </div>
         </div><br>
 
         <div class="results">
-        <button id="myBtn">Show me my result!</button>
+            <button id="myBtn" title="Picks you a restaurant to eat at that matches the given filters!">Show me my result!</button>
             <div id="myModal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p><div class="loader" id="loader"><img class="bear" id="dizzy" src="./images/dizzybear.png"></div><br>
-                </p>
-                <div id="restaurant-result"></div>
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p><div class="loader" id="loader"><img class="bear" id="dizzy" src="./images/dizzybear.png"></div><br>
+                    </p>
+                    <div id="restaurant-result"></div>
+                </div>
             </div>
-        </div>
-            OR <button id="generic">Pick me a cuisine!</button>
+            OR
+            <button id="generic" title="Picks you a generic cuisine to eat at, instead of a specific restaurant!">Pick me a cuisine!</button>
         </div>
 
     <br>

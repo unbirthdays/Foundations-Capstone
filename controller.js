@@ -143,7 +143,7 @@ module.exports = {
     },
 
     getRestaurants: (req, res) => {
-        query = "SELECT name, tags FROM restaurants ORDER BY name ASC"
+        query = "SELECT name, tags FROM restaurants"
         if(req.query.filters != undefined) {
             filters = req.query.filters.split(",");
             for(let i = 0; i < filters.length; i++) {
@@ -154,7 +154,7 @@ module.exports = {
                 }
             }
         }
-        query += ";"
+        query += "ORDER BY name ASC;"
         sequelize.query(query)
         .then((dbRes) => {
             data = []
@@ -198,7 +198,7 @@ module.exports = {
         console.log(query)
         sequelize.query(query)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0])
+            res.status(200).send(dbRes[0][0])
         }).catch(err => console.log('error getting random restaurant', err))
     },
 
@@ -218,7 +218,7 @@ module.exports = {
 
     getAllTags: (req, res) => {
         sequelize.query(`SELECT * FROM tags ORDER BY name ASC;`).then((dbRes) => {
-            res.status(200).send(dbRes[0][0])
+            res.status(200).send(dbRes[0])
         }).catch(err => console.log('error getting all tags', err))
     },
 
