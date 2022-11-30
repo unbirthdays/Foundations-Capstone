@@ -26,6 +26,7 @@ function getAllTags() {
 
 function updateSelectedFilters() {
   innerHTML = ``
+  selectedFiltersList.sort()
   for(let i = 0; i < selectedFiltersList.length; i++) {
     innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`
   }

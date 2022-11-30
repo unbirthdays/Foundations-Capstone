@@ -19,6 +19,8 @@ function getAllRestaurants() { // reference lab with cards
                     </div>
                 </div>
                 <ul>`
+
+                tags = restaurant.tags.sort()
                 for(let i = 0; i < restaurant.tags.length; i++) {
                     html += "<li>" + restaurant.tags[i] + "</li>";
                 }
