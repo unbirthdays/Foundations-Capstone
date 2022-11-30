@@ -203,10 +203,15 @@ module.exports = {
     },
 
     addRestaurant: (req, res) => {
-        sequelize.query(`INSERT INTO restaurants(name, tags) VALUES('${req.body.name}', '${req.body.tags}');`)
+        // we need to check and account for apostrophe in name 
+        restaurantName = req.body.name.replace("'", "''");
+        sequelize.query(`INSERT INTO restaurants(name, tags) VALUES('${restaurantName}', '${req.body.tags}');`)
         .then((dbRes) => {
-            res.status(200).send(dbRes[0])
-        }).catch(err => console.log('error adding new restaurant', err))
+            res.status(201).send(dbRes[0])
+        }).catch(err => {
+            console.log('error adding new restaurant', err)
+            res.status(409).send('error adding new restaurant')
+        })
     },
 
     deleteRestaurant: (req, res) => {

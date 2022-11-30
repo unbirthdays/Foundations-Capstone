@@ -29,12 +29,12 @@ body {
     width: 100%;
     top: 105px;
     background: #AFE4F4;
-      border-bottom: 5px solid #FFFFFF;
-      border-top: 5px solid #FFFFFF;
-      font-family: Kosugi;
-      max-height: 50px;
-      border-radius: 15px;
-      font-size: 25px;
+    border-bottom: 5px solid #FFFFFF;
+    border-top: 5px solid #FFFFFF;
+    font-family: Kosugi;
+    max-height: 50px;
+    border-radius: 15px;
+    font-size: 25px;
   }
 
   nav > ol {
@@ -146,9 +146,8 @@ body {
     overflow-y: scroll;
   }
 
-  .remove-selected-filter {
+  .remove-selected-filter, .remove-added-filter {
     background-color: #ff5860;
-    /* background-image: url("./images/trash-can-white.png"); */
     padding: 4px;
     margin: 0;
   }
@@ -171,6 +170,12 @@ body {
 
   #add-option {
     background-color: #A8DEB1;
+  }
+
+  #restaurant-name {
+    border: 1px solid black;
+    border-radius: 5pt;
+    height: 20px;
   }
 
   button {
@@ -263,6 +268,19 @@ body {
     justify-content: center;
     text-align: left;
     vertical-align:top;
+  }
+
+  .restaurant-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .delete-restaurant {
+    text-align: right;
+  }
+
+  .delete-restaurant-btn {
+    background-color: #ff5860;
   }
 
   footer {

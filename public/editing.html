@@ -41,7 +41,7 @@
 
             <br>
             <form>
-                <label for="restaurant-name">Restaurant name:</label><br>
+                <label for="restaurant-name">Restaurant name:</label>
                 <input type="text" id="restaurant-name" name="restaurant-name"><br>
             </form>
             <select name="filters" id="filters">
@@ -49,19 +49,20 @@
             </select>
             
             <button id="addFilter">Add filter</button><br>
-            <button id="delete">Remove all filters</button>
+            <button id="deleter">Remove all filters</button>
         </div>
         <div id="end">
-            <ul>
-                <li>hi</li>
-            </ul>
+            <div>
+                Restaurant Filters:
+                <ul id="added-filters">
+                </ul>
+            </div>
         </div>
     </div><br>
 
     <div class="option">
-        <button id="add-option">Add option</button>
+        <button id="add-option">Add new restaurant</button>
     </div>
-
 
     <br>
 <footer>Made by Sabrina Baccam</footer>

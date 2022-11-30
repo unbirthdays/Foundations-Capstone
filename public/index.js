@@ -27,8 +27,7 @@ function getAllTags() {
 function updateSelectedFilters() {
   innerHTML = ``
   for(let i = 0; i < selectedFiltersList.length; i++) {
-    // innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"></button></li>`
-    innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can-white.png"/></button></li>`
+    innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`
   }
 
   selectedFilters.innerHTML = innerHTML;
@@ -121,15 +120,15 @@ function getGenericResult(e) {
           loader.style.display = "none";
         }, 3000)
     })
-  }
+}
 
-  function deleteFilters(e) {
-    e.preventDefault();
-    if(window.confirm("Are you really sure you want to delete all filters?")) {
-      selectedFiltersList = [];
-      updateSelectedFilters();
-    }
+function deleteFilters(e) {
+  e.preventDefault();
+  if(confirm("Are you really sure you want to remove all filters?")) {
+    selectedFiltersList = [];
+    updateSelectedFilters();
   }
+}
 
 
 getAllTags()
