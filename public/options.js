@@ -1,4 +1,4 @@
-const restaurants = document.querySelector('#restaurants')
+const restaurants = document.querySelector('#restaurants');
 
 function getAllRestaurants() { // reference lab with cards
     restaurants.innerHTML = "";
@@ -18,9 +18,9 @@ function getAllRestaurants() { // reference lab with cards
                         </button>
                     </div>
                 </div>
-                <ul>`
+                <ul>`;
 
-                tags = restaurant.tags.sort()
+                tags = restaurant.tags.sort();
                 for(let i = 0; i < restaurant.tags.length; i++) {
                     html += "<li>" + restaurant.tags[i] + "</li>";
                 }
@@ -28,8 +28,8 @@ function getAllRestaurants() { // reference lab with cards
                 card.innerHTML = html;
 
                 restaurants.appendChild(card);
-            })
-        })
+            });
+        });
 }
 
 function deleteRestaurant(e) {
@@ -56,5 +56,5 @@ function deleteRestaurant(e) {
     }
 }
 
-getAllRestaurants()
-restaurants.addEventListener('click', deleteRestaurant)
+getAllRestaurants();
+restaurants.addEventListener('click', deleteRestaurant);

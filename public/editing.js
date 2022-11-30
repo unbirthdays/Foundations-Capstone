@@ -3,27 +3,26 @@ const addFilter = document.querySelector('#addFilter');
 const addedFilters = document.querySelector('#added-filters');
 const deleteBtn = document.querySelector('#deleter');
 const addOption = document.querySelector('#add-option');
-const inputRestaurantName = document.querySelector('#restaurant-name')
+const inputRestaurantName = document.querySelector('#restaurant-name');
 
-let addedFiltersList = []
+let addedFiltersList = [];
 
 function getAllTags() {
     axios.get('/api/getAllTags')
         .then(res => {
             res.data.forEach(tag => {
-                const option = document.createElement('option')
-                option.setAttribute('value', tag['name'])
-                option.textContent = tag.name
-                filters.appendChild(option)
-            })
-        })
+                const option = document.createElement('option');
+                option.setAttribute('value', tag['name']);
+                option.textContent = tag.name;
+                filters.appendChild(option);
+            });
+        });
 }
 
 function updateAddedFilters() {
-    innerHTML = ``
-    addedFiltersList.sort()
+    innerHTML = ``;
     for(let i = 0; i < addedFiltersList.length; i++) {
-      innerHTML += `<li>${addedFiltersList[i]} <button id="remove-filter-${addedFiltersList[i]}" class="remove-added-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`
+      innerHTML += `<li>${addedFiltersList[i]} <button id="remove-filter-${addedFiltersList[i]}" class="remove-added-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`;
     }
   
     addedFilters.innerHTML = innerHTML;
@@ -35,7 +34,7 @@ function addsFilter(e) {
         addedFiltersList.push(filter);
     }
   
-    updateAddedFilters()
+    updateAddedFilters();
 }
 
 function removeAddedFilter(e) {
@@ -46,7 +45,7 @@ function removeAddedFilter(e) {
     
     if(div.className == "remove-added-filter") {
       let divId = div.id;
-      filter = divId.split("remove-filter-")[1]
+      filter = divId.split("remove-filter-")[1];
       
       addedFiltersList.splice(addedFiltersList.indexOf(filter), 1);
       updateAddedFilters();
@@ -73,12 +72,12 @@ function addsOption(e) {
         updateAddedFilters();
     }).catch(err => {
         alert('A restaurant with this name already exists.\r\nPlease choose a new restaurant name and try again.');
-    })
+    });
 }
 
 
-getAllTags()
-addFilter.addEventListener('click', addsFilter)
-addedFilters.addEventListener('click', removeAddedFilter)
-deleteBtn.addEventListener('click', deleteFilters)
-addOption.addEventListener('click', addsOption)
+getAllTags();
+addFilter.addEventListener('click', addsFilter);
+addedFilters.addEventListener('click', removeAddedFilter);
+deleteBtn.addEventListener('click', deleteFilters);
+addOption.addEventListener('click', addsOption);

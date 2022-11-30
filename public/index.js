@@ -9,26 +9,25 @@ const redo = document.querySelector('#redo');
 const generic = document.querySelector('#generic');
 const deleteBtn = document.querySelector('#deleter');
 
-let selectedFiltersList = []
+let selectedFiltersList = [];
 
 function getAllTags() {
     axios.get('/api/getAllTags')
         .then(res => {
             res.data.forEach(tag => {
-                const option = document.createElement('option')
-                option.setAttribute('value', tag['name'])
-                option.textContent = tag.name
-                filters.appendChild(option)
+                const option = document.createElement('option');
+                option.setAttribute('value', tag['name']);
+                option.textContent = tag.name;
+                filters.appendChild(option);
             })
         })
 }
 
 
 function updateSelectedFilters() {
-  innerHTML = ``
-  selectedFiltersList.sort()
+  innerHTML = ``;
   for(let i = 0; i < selectedFiltersList.length; i++) {
-    innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`
+    innerHTML += `<li>${selectedFiltersList[i]} <button id="remove-filter-${selectedFiltersList[i]}" class="remove-selected-filter" title="Remove this filter!"><img style="vertical-align:sub" height="15px" src="./images/trash-can.png"/></button></li>`;
   }
 
   selectedFilters.innerHTML = innerHTML;
@@ -41,7 +40,7 @@ function addsFilter(e) {
     selectedFiltersList.push(filter);
   }
 
-  updateSelectedFilters()
+  updateSelectedFilters();
 }
 
 function removeSelectedFilter(e) {
@@ -52,7 +51,7 @@ function removeSelectedFilter(e) {
   
   if(div.className == "remove-selected-filter") {
     let divId = div.id;
-    filter = divId.split("remove-filter-")[1]
+    filter = divId.split("remove-filter-")[1];
     
     selectedFiltersList.splice(selectedFiltersList.indexOf(filter), 1);
     updateSelectedFilters();
@@ -72,7 +71,7 @@ function showMyResults(e) {
   axios.get('/api/getRandomRestaurant', { params: { filters: selectedFiltersList.join(",") } })
     .then(res => {
       if(res.data != '') {
-        let restaurant = res.data.name
+        let restaurant = res.data.name;
         const randomRest = document.createElement('div');
         randomRest.innerHTML = `<span style="font-size:24px">Eat at <span style="color:#AFE4F4"><b>${restaurant}</b></span> today!</span><br><br>
         <img height="200px" src="./images/bear-eating.gif"/>`;
@@ -83,7 +82,7 @@ function showMyResults(e) {
 
         setTimeout(() => {
           loader.style.display = "none";
-        }, 3000)
+        }, 3000);
       }
       else {
         const randomRest = document.createElement('div');
@@ -96,7 +95,7 @@ function showMyResults(e) {
 
         setTimeout(() => {
           loader.style.display = "none";
-        }, 3000)
+        }, 3000);
       }
   })
 }
@@ -119,7 +118,7 @@ function getGenericResult(e) {
 
         setTimeout(() => {
           loader.style.display = "none";
-        }, 3000)
+        }, 3000);
     })
 }
 
@@ -132,12 +131,12 @@ function deleteFilters(e) {
 }
 
 
-getAllTags()
-addFilter.addEventListener('click', addsFilter)
-selectedFilters.addEventListener('click', removeSelectedFilter)
-showMe.addEventListener('click', showMyResults)
-generic.addEventListener('click', getGenericResult)
-deleteBtn.addEventListener('click', deleteFilters)
+getAllTags();
+addFilter.addEventListener('click', addsFilter);
+selectedFilters.addEventListener('click', removeSelectedFilter);
+showMe.addEventListener('click', showMyResults);
+generic.addEventListener('click', getGenericResult);
+deleteBtn.addEventListener('click', deleteFilters);
 
 // NOTE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Below is all stuff for the modal
