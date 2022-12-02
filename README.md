@@ -2,7 +2,7 @@
 ![Banner](./images/banner.png)
 
 <h2><strong>Overview:</strong></h2>
-1. Introduction and Purpose<br>
+1. <a href="intro">Introduction and Purpose</a><br>
 2. Tech Stack<br>
 3. Features and Visuals<br>
 4. Future Considerations<br>
@@ -10,7 +10,7 @@
 6. Bugs<br>
 7. Local Hosting Instructions<br>
 <br><hr><br>
-<h2><strong>Introduction:</strong></h2>
+<h2><strong><a id="#intro">Introduction:</a></strong></h2>
 <h3>No More Nahs is a full-stack application for all those picky eaters in your life. Inspired by my love of food, the desire to put SQL into practice to prepare for my data analytics studies, and my new bear65 v2 keyboard I finished building during this week. My project came to fruition during my first half of my coding journey at Devmountain. Imagine this scenario to help you understand the use case of this project:<br></h3>
 <i>You: Hey, what do you want to eat?<br>
 Partner: Hmm, I don't know.<br>
