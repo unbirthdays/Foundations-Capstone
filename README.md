@@ -2,7 +2,7 @@
 ![Banner](./images/banner.png)
 
 <h2><strong>Overview:</strong></h2>
-1. <a href="intro">Introduction and Purpose</a><br>
+1. <a href="/intro">Introduction and Purpose</a><br>
 2. Tech Stack<br>
 3. Features and Visuals<br>
 4. Future Considerations<br>
