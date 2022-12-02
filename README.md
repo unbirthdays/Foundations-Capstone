@@ -103,6 +103,15 @@ Features include:<br>
 3. Button to remove an option from the database powered by a delete request to the backend
 <br><br>
 
+![add-restaurant](./images/add-restaurant.png)
+##### Add restaurant page with a similar function tot he landing page, but functions to add restaurants to the database as an option for the user. #####
+<br>
+Features include:<br>
+1. Similar buttons to the home page<br>
+2. Text box to input name of the restaurant<br>
+3. Green button to add restaurant to the database, accessible to view in the all options link in the navigation bar
+<br><br>
+
 ![About](./images/about.png)
 ##### Static HTML page #####
 <br>
@@ -117,12 +126,6 @@ Features include:<br>
 <li>Login page to prevent sharing databases</li>
 <li>Option to add your own tags</li>
 </ul>
-<br><br>
-
-![add-restaurant](./images/add-restaurant.png)
-##### Add restaurant page with a similar function tot he landing page, but functions to add restaurants to the database as an option for the user. #####
-<br>
-Features include:<br>
 <hr>
 <h2><strong>Things to Improve:</strong></h2>
 <ul>
