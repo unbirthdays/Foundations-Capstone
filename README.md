@@ -26,7 +26,7 @@ You: [sobs quietly] La... La Madeleine... Please...<br>
 Partner: You should've just said so! Wait... Actually, nah!<br>
 You: [exit, pursued by a bear]</i>
 <br><br>
-Frustrating, no? Watch this demo video to see me vocalize the story and test out my application.
+Frustrating, no? Watch this demo video <a href="https://www.youtube.com/watch?v=Im1r6EKZHyA">here</a> to see me test out my application.
 Hosted site <a href="https://www.no-more-nahs.herokuapp.com">here</a> until I run out of the $5 needed to host my site.
 <br><br><hr>
 <h2><strong>Tech stack:</strong></h2>
